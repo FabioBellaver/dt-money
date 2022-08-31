@@ -8,28 +8,7 @@ import {
   TransactionsTable,
 } from "./styles";
 
-interface Transaction {
-  id: number;
-  description: string;
-  type: "income" | "outcome";
-  category: string;
-  price: number;
-  createdAt: string;
-}
-
 export function Transactions() {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
-
-  const loadTransactions = async () => {
-    const response = await fetch("http://localhost:3000/transactions");
-    const data = await response.json();
-    setTransactions(data);
-  };
-
-  useEffect(() => {
-    loadTransactions();
-  }, []);
-
   return (
     <>
       <Header />
