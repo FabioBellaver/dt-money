@@ -17,7 +17,7 @@ interface TransactionProviderProps {
   children: ReactNode;
 }
 
-const TransactionContext = createContext({} as TransactionContextType);
+export const TransactionsContext = createContext({} as TransactionContextType);
 
 export function TransactionsProvider({ children }: TransactionProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -31,8 +31,10 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
   useEffect(() => {
     loadTransactions();
   }, []);
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
-  <TransactionContext.Provider value={{ transactions }}>
-    {children}
-  </TransactionContext.Provider>;
+  return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <TransactionsContext.Provider value={{ transactions }}>
+      {children}
+    </TransactionsContext.Provider>
+  );
 }

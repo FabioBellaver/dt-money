@@ -15,6 +15,14 @@
       "category": "Rent",
       "price": 2200,
       "createdAt": "2022-08-31T22:09:55.995Z"
+    },
+    {
+      "id": 3,
+      "description": "Market",
+      "type": "outcome",
+      "category": "Food",
+      "price": 450,
+      "createdAt": "2022-08-31T22:09:55.995Z"
     }
   ]
 }
